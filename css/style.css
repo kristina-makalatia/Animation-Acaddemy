@@ -1,0 +1,71 @@
+.yellow-box {
+	background-color: yellow;
+	width: 600px;
+	height: 600px;
+	position: relative;
+/*	transition-property: all;
+	transition-duration: 0.3s;
+	transition-timing-function: linear;
+	transition-delay: 0.3s;*/
+	transition: all 0.3s linear 0.3s;
+	opacity: 0.5;
+	box-shadow: 3px 5px 7px red;
+}
+.green-box {
+	background-color: green;
+	width: 200px;
+	height: 200px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	transition: all 0.3s linear 0.3s;
+	animation: myanimation 3s infinite;
+}
+.text {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) rotate(45deg);
+	white-space: nowrap;
+	font-size: 39px;
+	text-transform: uppercase;
+	color: red;
+	transition: all 0.3s ease 0.3s;
+}
+.read {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	color:black;
+	transition: all 0.3s ease-in 0.3s;
+}
+.read:hover {
+	right: 20px;
+	color: aqua;
+}
+.yellow-box:hover {
+	background-color: red;
+	opacity: 1;
+	cursor: pointer;
+}
+.yellow-box:hover .text {
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) rotate(0deg);
+	color: green;
+}
+/*.yellow-box:hover .green-box {
+	background-color: pink;
+	transform: translate(-50%, -50%) rotate(45deg) scale(1.5);
+}
+*/
+
+
+@keyframes myanimation {
+  0%   {background: red; transform: translate(-50%, -50%) rotate(0deg);}
+  25%  {background: yellow; transform: translate(-50%, -50%) rotate(45deg);}
+  60%  {background: black; transform: translate(-50%, -50%) rotate(90deg);}
+  80%  {background: red; transform: translate(-50%, -50%) rotate(360deg);}
+  100% {background: green; transform: translate(-50%, -50%) rotate(0deg);}
+}
